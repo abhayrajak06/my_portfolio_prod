@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Layout from "./components/Layout/Layout";
+import { useTheme } from "./context/ThemeContext";
+import ScrollToTop from "react-scroll-to-top";
 
 function App() {
+  const [theme] = useTheme();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div id={theme}>
+        <Layout />
+      </div>
+      <ScrollToTop
+        smooth
+        color="#e89b17"
+        style={{
+          backgroundColor: "#1e2e2a",
+          borderRadius: "2rem",
+        }}
+      />
+    </>
   );
 }
 
